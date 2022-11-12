@@ -1,19 +1,13 @@
-# revision 30285
-# category Package
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
 Name:		texlive-babel-romanian
-Version:	1.2l
-Release:	2
+Version:	58776
+Release:	1
 Summary:	TeXLive babel-romanian package
 Group:		Publishing
 URL:		http://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-romanian.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-romanian.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-romanian.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-romanian.r58776.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-romanian.doc.r58776.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-romanian.source.r58776.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -23,24 +17,24 @@ Requires(post):	texlive-kpathsea
 TeXLive babel-romanian package.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/generic/babel-romanian/romanian.ldf
-%doc %{_texmfdistdir}/doc/generic/babel-romanian/romanian.pdf
+%{_texmfdistdir}/tex/generic/babel-romanian
+%doc %{_texmfdistdir}/doc/generic/babel-romanian
 #- source
-%doc %{_texmfdistdir}/source/generic/babel-romanian/romanian.dtx
-%doc %{_texmfdistdir}/source/generic/babel-romanian/romanian.ins
+%doc %{_texmfdistdir}/source/generic/babel-romanian
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
