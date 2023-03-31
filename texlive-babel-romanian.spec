@@ -1,6 +1,6 @@
 Name:		texlive-babel-romanian
 Version:	58776
-Release:	1
+Release:	2
 Summary:	TeXLive babel-romanian package
 Group:		Publishing
 URL:		http://tug.org/texlive
